@@ -9,6 +9,7 @@ const foreground = {
     loader: document.getElementById("loader"),
     text: document.getElementById("text"),
     death: document.getElementById("death"),
+    fail: document.getElementById("fail"),
     hud: document.getElementById("hud"),
   },
 

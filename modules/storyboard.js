@@ -54,12 +54,34 @@ const storyboard = {
     },
 
     LEVEL: {
-      death() {
+      play(timeout) {
         background.enabled = false;
         foreground.show("death");
         sound.reset();
         sound.play("lostALife");
-        storyboard.changeState("DEATH");
+        this.changeState("DEATH");
+
+        setTimeout(() => {
+          foreground.show("fade");
+
+          if (player.lives > 0) {
+            setTimeout(() => storyboard.dispatch("play", []), timeout);
+          } else {
+            setTimeout(() => storyboard.dispatch("fail", []), timeout);
+          }
+        }, 3100);
+      },
+    },
+
+    DEATH: {
+      play() {
+        player.lives -= 1;
+        storyboard.playLevel();
+      },
+
+      fail() {
+        foreground.show("fail");
+        sound.play("gameOver");
       },
     },
   },
@@ -74,8 +96,10 @@ const storyboard = {
 
     controller.reset();
     player.reset();
+    background.enabled = true;
     background.change(backgroundTheme);
     foreground.hide("tutorial");
+    foreground.hide("death");
     foreground.hide("fade");
     foreground.show("text");
     sound.play(musicName);

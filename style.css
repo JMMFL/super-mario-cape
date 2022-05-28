@@ -175,38 +175,24 @@ input:focus {
   line-height: 650px;
 }
 
-#screen-failure > * {
-  position: relative;
-  top: 40%;
+#fail {
+  top: calc(50% - 20px);
+  font-size: 60px;
+  text-transform: uppercase;
+  background-color: black;
+  overflow: hidden;
 }
 
-#screen-failure h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+#fail-game {
+  color: yellow;
+  left: calc(50% - 600px);
+  animation: moveGame 2s forwards;
 }
 
-#screen-failure button {
-  font-size: 15px;
-  background: none;
-  border: none;
-}
-
-#screen-retry {
-  background: black;
-  padding: 20px;
-}
-
-#screen-retry h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-#screen-retry button {
-  font-size: 15px;
-  display: block;
-  margin: 0 auto;
-  border: none;
-  background: none;
+#fail-over {
+  color: yellow;
+  left: calc(50% + 600px);
+  animation: moveOver 2s forwards;
 }
 
 #screen-outro {
@@ -265,10 +251,6 @@ input:focus {
   line-height: 31px;
 }
 
-#backdrop {
-  z-index: -2;
-}
-
 #loader {
   width: 100vw;
   height: 100vh;
@@ -283,24 +265,6 @@ input:focus {
   height: 500px;
   top: calc(50% - 20px);
   z-index: 999;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 .bg-athletic {
@@ -346,5 +310,23 @@ input:focus {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes moveGame {
+  from {
+    transform: translateX(initial);
+  }
+  to {
+    transform: translateX(350px);
+  }
+}
+
+@keyframes moveOver {
+  from {
+    transform: translateX(initial);
+  }
+  to {
+    transform: translateX(-575px);
   }
 }

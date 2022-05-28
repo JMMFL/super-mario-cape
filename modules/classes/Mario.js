@@ -15,7 +15,7 @@ class Mario extends Element {
     this.wBox = 92;
     this.hBox = 76;
 
-    this.lives = 3;
+    this.lives = 2;
 
     this.xSpeed = 10;
     this.ySpeed = 10;
@@ -45,8 +45,7 @@ class Mario extends Element {
     this.yPos += this.gravity;
 
     if (hasFallen && storyboard.state === "TUTORIAL") this.reset();
-    else if (hasFallen) storyboard.dispatch("death", []);
-    // else if (hasFallen) this.isDead = true;
+    else if (hasFallen) storyboard.dispatch("play", [1000]);
   }
 
   moveRight() {
