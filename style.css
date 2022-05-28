@@ -102,11 +102,11 @@ input:focus {
   background-image: url(images/graphics/death.png),
     url(images/graphics/death.gif);
   background-repeat: no-repeat, no-repeat;
-  background-size: auto, 0;
+  background-size: 60px, 0;
 }
 
 #death.falling {
-  background-size: 0, auto;
+  background-size: 0, 60px;
   animation: falling 1.5s forwards;
 }
 
