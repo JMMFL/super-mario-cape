@@ -15,6 +15,7 @@ import OVERWORLD from "./modules/levels/overworld.js";
 
 // we're drawing mario on all screens
 // mario can move during tutorial on exit
+// draw mario but put him away OR don't draw mario at all
 
 const FPS_INTERVAL = 1000 / 60;
 const CANVAS = document.getElementById("canvas");
@@ -66,21 +67,20 @@ function runGame() {
 
   if (elapsed > FPS_INTERVAL) {
     then = now - (elapsed % FPS_INTERVAL);
-
-    if (background.enabled) background.scroll();
+    background.scroll();
+    clearCanvas();
 
     if (storyboard.canPlay()) {
-      player.move();
-      elements.move();
-
-      if (storyboard.passedTutorial()) {
-        storyboard.dispatch("play", [1500]);
+      if (storyboard.state !== "TUTORIAL" || !player.passedTutorial) {
+        player.move();
       }
-    }
 
-    clearCanvas();
-    if (storyboard.state !== "DEATH") player.draw();
-    elements.draw();
+      player.draw();
+      elements.move();
+      elements.draw();
+    } else if (storyboard.state === "DEATH") {
+      elements.draw();
+    }
   }
 }
 
