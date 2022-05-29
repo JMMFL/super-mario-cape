@@ -233,7 +233,7 @@ input:focus {
 }
 
 #fade.fade-active {
-  animation: fadein 1s forwards;
+  animation: fadeOut 1s forwards;
 }
 
 .bg-athletic {
@@ -273,7 +273,7 @@ input:focus {
   }
 }
 
-@keyframes fadein {
+@keyframes fadeOut {
   from {
     opacity: 0;
   }
