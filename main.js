@@ -13,7 +13,6 @@ import Mario from "./modules/classes/Mario.js";
 import Level from "./modules/classes/Level.js";
 import OVERWORLD from "./modules/levels/overworld.js";
 
-// bug where sprite is midway for enemies when mario dies
 // we're drawing mario on all screens
 // mario can move during tutorial on exit
 

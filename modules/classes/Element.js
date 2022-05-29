@@ -79,8 +79,8 @@ class Element {
   }
 
   draw() {
+    if (storyboard.state !== "DEATH") this.drawSprite();
     this.drawImage();
-    this.drawSprite();
   }
 
   move() {
