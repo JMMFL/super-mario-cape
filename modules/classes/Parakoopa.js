@@ -15,8 +15,7 @@ class Parakoopa extends Element {
     this.xSpeed = 7;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveWave();
   }
 }

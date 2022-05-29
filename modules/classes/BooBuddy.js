@@ -16,8 +16,7 @@ class BooBuddy extends Element {
     this.hBox = 64;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveLinear();
   }
 }

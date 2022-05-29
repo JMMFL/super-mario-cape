@@ -22,8 +22,7 @@ class FlyingBrother extends Element {
     this.xSpeed = 15;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveCurve();
   }
 }

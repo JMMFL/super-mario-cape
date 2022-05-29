@@ -19,8 +19,7 @@ class Eerie extends Element {
     this.hBox = 64;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.xPos -= this.xSpeed;
     this.yPos =
       this.yIni + 40 * (this.time / 800) * Math.sin((15 * this.time) / 800);

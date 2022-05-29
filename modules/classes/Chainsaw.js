@@ -18,8 +18,7 @@ class Chainsaw extends Element {
     this.yOff = 3;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveLinear();
   }
 }

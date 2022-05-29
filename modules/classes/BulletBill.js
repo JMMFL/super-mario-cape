@@ -14,8 +14,7 @@ class BulletBill extends Element {
     this.hBox = 56;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveLinear();
   }
 }

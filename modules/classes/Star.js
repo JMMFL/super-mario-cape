@@ -14,8 +14,7 @@ class Star extends Element {
     this.xSpeed = 15;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     if (this.xPos > SCREEN.centerX + 58) this.moveLinear();
   }
 }

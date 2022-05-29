@@ -20,8 +20,7 @@ class BigBoo extends Element {
     this.yOff = 20;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveWave();
   }
 }

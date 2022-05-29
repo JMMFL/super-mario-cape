@@ -19,8 +19,7 @@ class BigBubble extends Element {
     this.yOff = 20;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     if (this.yPos + this.hBox > SCREEN.height || this.yPos < 0)
       this.ySpeed *= -1;
     this.xPos -= this.xSpeed;

@@ -12,7 +12,7 @@ class YellowSuperKoopa extends SuperKoopa {
     this.xSpeed = 16;
   }
 
-  move() {
+  moveImage() {
     this.moveCurve();
   }
 }

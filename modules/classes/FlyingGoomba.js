@@ -21,8 +21,7 @@ class FlyingGoomba extends Element {
     this.yOff = 35;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveWave();
   }
 }

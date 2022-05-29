@@ -10,8 +10,7 @@ class RedSuperKoopa extends SuperKoopa {
     this.xSpeed = 18;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveLinear();
   }
 }

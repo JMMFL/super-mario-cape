@@ -16,8 +16,7 @@ class BanzaiBill extends Element {
     this.yOff = 10;
   }
 
-  move() {
-    super.move();
+  moveImage() {
     this.moveLinear();
   }
 }
