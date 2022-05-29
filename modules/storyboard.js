@@ -60,7 +60,7 @@ const storyboard = {
     },
 
     LEVEL: {
-      play(timeout) {
+      die(timeout) {
         controller.enabled = false;
         background.enabled = false;
         foreground.show("death");

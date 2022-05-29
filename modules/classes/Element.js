@@ -89,7 +89,7 @@ class Element {
 
     if (this instanceof Mario === false) {
       if (this.detectHit()) {
-        storyboard.dispatch("play", [1000]);
+        storyboard.dispatch("die", [1000]);
       }
     }
 

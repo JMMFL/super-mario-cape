@@ -45,7 +45,7 @@ class Mario extends Element {
     this.yPos += this.gravity;
 
     if (hasFallen && storyboard.state === "TUTORIAL") this.reset();
-    else if (hasFallen) storyboard.dispatch("play", [1000]);
+    else if (hasFallen) storyboard.dispatch("die", [1000]);
   }
 
   moveRight() {
