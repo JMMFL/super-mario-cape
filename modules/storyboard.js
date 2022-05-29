@@ -75,6 +75,24 @@ const storyboard = {
           setTimeout(() => storyboard.dispatch(next, []), timeout);
         }, 3100);
       },
+
+      pass(timeout) {
+        const beatGame = levels.atEnd();
+        controller.enabled = false;
+        foreground.show("pass");
+        sound.reset();
+        sound.play(`${beatGame ? "fortress" : "course"}Clear`);
+        this.changeState("PASS");
+
+        setTimeout(() => {
+          background.enabled = false;
+          foreground.hide("pass");
+          foreground.show("iris");
+          sound.play("irisOut");
+          const next = beatGame ? "end" : "play";
+          setTimeout(() => storyboard.dispatch(next, []), timeout);
+        }, 8200);
+      },
     },
 
     DEATH: {
@@ -103,6 +121,16 @@ const storyboard = {
         }, 6500);
       },
     },
+
+    PASS: {
+      play() {
+        console.log("play level");
+      },
+
+      end() {
+        console.log("show ending");
+      },
+    },
   },
 
   playLevel() {
@@ -121,6 +149,7 @@ const storyboard = {
     foreground.hide("tutorial");
     foreground.hide("death");
     foreground.hide("fade");
+    foreground.hide("iris");
     foreground.show("level");
     sound.play(musicName);
 

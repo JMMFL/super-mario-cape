@@ -1,4 +1,5 @@
 import Element from "./modules/classes/Element.js";
+import Star from "./modules/classes/Star.js";
 import SuperKoopa from "./modules/classes/SuperKoopa.js";
 import Parakoopa from "./modules/classes/Parakoopa.js";
 import YellowParakoopa from "./modules/classes/YellowParakoopa.js";
@@ -84,6 +85,8 @@ function runGame() {
       elements.draw();
     } else if (storyboard.state === "DEATH") {
       elements.draw();
+    } else if (storyboard.state === "PASS") {
+      player.draw();
     }
   }
 }
@@ -125,5 +128,6 @@ export {
   Parakoopa,
   SuperKoopa,
   YellowParakoopa,
+  Star,
   Mario,
 };
