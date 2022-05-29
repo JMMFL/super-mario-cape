@@ -192,9 +192,6 @@ input:focus {
 }
 
 #screen-transition-iris {
-  box-sizing: border-box;
-  border: 0 solid black;
-  pointer-events: none;
 }
 
 #tutorial {
@@ -234,6 +231,28 @@ input:focus {
 
 #fade.fade-active {
   animation: fadeOut 1s forwards;
+}
+
+#iris {
+  box-sizing: border-box;
+  border: 0 solid black;
+  pointer-events: none;
+  animation: irisOut 1.5s forwards;
+}
+
+@keyframes irisOut {
+  from {
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+  }
+  to {
+    border-left-width: 610px;
+    border-right-width: 610px;
+    border-top-width: 460px;
+    border-bottom-width: 460px;
+  }
 }
 
 .bg-athletic {
