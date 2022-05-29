@@ -8,6 +8,7 @@ const foreground = {
     tutorial: document.getElementById("tutorial"),
     loader: document.getElementById("loader"),
     level: document.getElementById("level"),
+    pass: document.getElementById("pass"),
     death: document.getElementById("death"),
     fail: document.getElementById("fail"),
     hud: document.getElementById("hud"),
@@ -23,6 +24,10 @@ const foreground = {
       case level:
         const { name } = levels.getCurrent();
         screen.innerText = `${name}`;
+        break;
+      case pass:
+        const type = levels.atEnd() ? "Fortress" : "Course";
+        pass.innerText = `${type} Complete`;
         break;
       case hud:
         const { lives } = player;

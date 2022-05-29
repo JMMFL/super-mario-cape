@@ -72,6 +72,15 @@ input:focus {
     -3px 3px 0 #000;
 }
 
+.text {
+  text-transform: uppercase;
+  font-size: 32px;
+  color: yellow;
+  text-align: center;
+  line-height: 650px;
+  background: #000000;
+}
+
 #background {
   width: 1008px;
   height: 758px;
@@ -158,12 +167,8 @@ input:focus {
   top: calc(50% + 234px);
 }
 
-#level {
-  font-size: 26px;
-  color: yellow;
-  background: #000000;
-  text-align: center;
-  line-height: 650px;
+#pass {
+  animation: bgFade 2s forwards;
 }
 
 #fail {
@@ -274,6 +279,15 @@ input:focus {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes bgFade {
+  from {
+    background-color: #00000000;
+  }
+  to {
+    background-color: #000000ff;
   }
 }
 
