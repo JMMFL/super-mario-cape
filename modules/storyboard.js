@@ -156,10 +156,6 @@ const storyboard = {
   canPlay() {
     return this.state === "TUTORIAL" || this.state === "LEVEL";
   },
-
-  passedTutorial() {
-    return this.state === "TUTORIAL" && player.passedTutorial;
-  },
 };
 
 export default storyboard;
