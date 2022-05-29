@@ -1,6 +1,8 @@
 import { storyboard, sound, player } from "../main.js";
 
 const controller = {
+  enabled: true,
+
   LEFT_KEY: 37,
   RIGHT_KEY: 39,
   UP_1_KEY: 38,
@@ -21,10 +23,7 @@ const controller = {
     });
 
     const callback = (event) => {
-      const { state } = storyboard;
-      if (state === "LEVEL" || state === "TUTORIAL") {
-        this.onPlayerInput(event);
-      }
+      if (this.enabled) this.onPlayerInput(event);
     };
 
     document.addEventListener("keydown", callback);
