@@ -32,13 +32,17 @@ const storyboard = {
         sound.play("coin");
 
         setTimeout(() => {
-          player.reset();
-          background.change("athletic");
-          foreground.hide("menu");
-          foreground.hide("fade");
-          foreground.show("tutorial");
-          sound.play("worldClear");
-          this.changeState("TUTORIAL");
+          if (player.passedTutorial) {
+            storyboard.playLevel();
+          } else {
+            player.reset();
+            background.change("athletic");
+            foreground.hide("menu");
+            foreground.hide("fade");
+            foreground.show("tutorial");
+            sound.play("worldClear");
+            this.changeState("TUTORIAL");
+          }
         }, timeout);
       },
     },
@@ -62,6 +66,7 @@ const storyboard = {
         this.changeState("DEATH");
 
         setTimeout(() => {
+          foreground.hide("death");
           foreground.show("fade");
 
           if (player.lives > 0) {
@@ -80,8 +85,23 @@ const storyboard = {
       },
 
       fail() {
+        foreground.hide("hud");
+        foreground.hide("fade");
         foreground.show("fail");
         sound.play("gameOver");
+
+        setTimeout(() => {
+          foreground.show("fade");
+          setTimeout(() => {
+            background.enabled = true;
+            background.change("menu");
+            foreground.hide("fail");
+            foreground.hide("fade");
+            foreground.show("menu");
+            sound.play("title");
+            this.changeState("START");
+          }, 1000);
+        }, 6500);
       },
     },
   },
@@ -98,6 +118,7 @@ const storyboard = {
     player.reset();
     background.enabled = true;
     background.change(backgroundTheme);
+    foreground.hide("menu");
     foreground.hide("tutorial");
     foreground.hide("death");
     foreground.hide("fade");
