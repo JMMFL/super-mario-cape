@@ -27,7 +27,7 @@ const foreground = {
         break;
       case pass:
         const type = levels.atEnd() ? "Fortress" : "Course";
-        pass.innerText = `${type} Complete`;
+        pass.innerText = `${type} Clear!`;
         break;
       case hud:
         const { lives } = player;
