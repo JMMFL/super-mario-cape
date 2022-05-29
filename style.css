@@ -148,15 +148,6 @@ input:focus {
   top: calc(50% + 250px);
 }
 
-#fade {
-  background-color: black;
-  opacity: 0%;
-}
-
-#fade.fade-active {
-  animation: fadein 1s forwards;
-}
-
 #start-btn:hover ~ #menu-hover {
   display: block;
   top: calc(50% + 173px);
@@ -201,11 +192,6 @@ input:focus {
   pointer-events: none;
 }
 
-#screen-transition-fade {
-  background-color: black;
-  opacity: 0;
-}
-
 #tutorial {
   color: white;
   font-size: 24px;
@@ -234,6 +220,15 @@ input:focus {
   height: 500px;
   top: calc(50% - 20px);
   z-index: 999;
+}
+
+#fade {
+  background-color: black;
+  opacity: 0%;
+}
+
+#fade.fade-active {
+  animation: fadein 1s forwards;
 }
 
 .bg-athletic {
