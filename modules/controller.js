@@ -11,6 +11,26 @@ const controller = {
   pressedUp: false,
   pressedDown: false,
 
+  setup() {
+    const startBtn = document.getElementById("start-btn");
+
+    startBtn.addEventListener("click", (event) => {
+      if (storyboard.state === "START") {
+        this.onMenuInput(event);
+      }
+    });
+
+    const callback = (event) => {
+      const { state } = storyboard;
+      if (state === "LEVEL" || state === "TUTORIAL") {
+        this.onPlayerInput(event);
+      }
+    };
+
+    document.addEventListener("keydown", callback);
+    document.addEventListener("keyup", callback);
+  },
+
   reset() {
     this.pressedLeft = false;
     this.pressedRight = false;

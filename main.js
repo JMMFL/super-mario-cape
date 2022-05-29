@@ -91,43 +91,13 @@ function clearCanvas() {
 function setGame() {
   let interval = setInterval(() => {
     if (loading.length === 0) {
-      setAudio();
-      setControls();
+      controller.setup();
+      sound.setup();
       runGame();
       storyboard.dispatch("play", []);
       clearInterval(interval);
     }
   }, 250);
-}
-
-function setAudio() {
-  const soundBtn = document.getElementById("sound-btn");
-  soundBtn.addEventListener("click", () => {
-    sound.toggle();
-    const { enabled } = sound;
-    sound.library.title[enabled ? "play" : "pause"]();
-    soundBtn.value = `Sound: ${enabled ? "On!" : "Off"}`;
-  });
-}
-
-function setControls() {
-  const startBtn = document.getElementById("start-btn");
-
-  startBtn.addEventListener("click", (event) => {
-    if (storyboard.state === "START") {
-      controller.onMenuInput(event);
-    }
-  });
-
-  const callback = (event) => {
-    const { state } = storyboard;
-    if (state === "LEVEL" || state === "TUTORIAL") {
-      controller.onPlayerInput(event);
-    }
-  };
-
-  document.addEventListener("keydown", callback);
-  document.addEventListener("keyup", callback);
 }
 
 window.addEventListener("load", setGame);

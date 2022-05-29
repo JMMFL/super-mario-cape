@@ -17,6 +17,16 @@ const sound = {
     yoshisIsland: new Audio("audio/music/yoshis-island.mp3"),
   },
 
+  setup() {
+    const soundBtn = document.getElementById("sound-btn");
+    soundBtn.addEventListener("click", () => {
+      this.toggle();
+      const { enabled } = this;
+      this.library.title[enabled ? "play" : "pause"]();
+      soundBtn.value = `Sound: ${enabled ? "On!" : "Off"}`;
+    });
+  },
+
   play(soundName) {
     if (!this.enabled) return;
 
