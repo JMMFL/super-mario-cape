@@ -71,12 +71,8 @@ const storyboard = {
         setTimeout(() => {
           foreground.hide("death");
           foreground.show("fade");
-
-          if (player.lives > 0) {
-            setTimeout(() => storyboard.dispatch("play", []), timeout);
-          } else {
-            setTimeout(() => storyboard.dispatch("fail", []), timeout);
-          }
+          const next = player.lives > 0 ? "play" : "fail";
+          setTimeout(() => storyboard.dispatch(next, []), timeout);
         }, 3100);
       },
     },
