@@ -172,7 +172,6 @@ input:focus {
 }
 
 #fail {
-  top: calc(50% - 20px);
   font-size: 60px;
   text-transform: uppercase;
   background-color: black;
