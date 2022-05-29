@@ -22,6 +22,7 @@ const background = {
   },
 
   scroll() {
+    if (!this.enabled) return;
     const x = parseInt(this.element.style.backgroundPositionX);
     this.element.style.backgroundPositionX = `${x - this.speed}px`;
   },
