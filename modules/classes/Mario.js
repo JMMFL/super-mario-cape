@@ -15,7 +15,7 @@ class Mario extends Element {
     this.wBox = 92;
     this.hBox = 76;
 
-    this.lives = 2;
+    this.lives = 0;
 
     this.xSpeed = 10;
     this.ySpeed = 10;
@@ -53,7 +53,10 @@ class Mario extends Element {
     const offset = state === "TUTORIAL" ? 2 : 1;
     const hasSpace = this.xPos + this.width / offset < SCREEN.width;
     if (hasSpace) this.xPos += this.xSpeed + this.wind;
-    if (state === "TUTORIAL" && !hasSpace) this.passedTutorial = true;
+    if (state === "TUTORIAL" && !this.passedTutorial && !hasSpace) {
+      this.passedTutorial = true;
+      storyboard.dispatch("play", [1000]);
+    }
   }
 
   moveLeft() {
