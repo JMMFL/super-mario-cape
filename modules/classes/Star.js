@@ -1,4 +1,4 @@
-import { Element } from "../../main.js";
+import { Element, SCREEN } from "../../main.js";
 
 class Star extends Element {
   constructor() {
