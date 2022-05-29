@@ -1,7 +1,7 @@
 import { storyboard, sound } from "../main.js";
 
 const controller = {
-  enabled: true,
+  enabled: false,
 
   LEFT_KEY: 37,
   RIGHT_KEY: 39,
