@@ -14,7 +14,7 @@ const SPAWNER = {
 
     for (let i = 0; i < size; i++) {
       let yPos = yIni + spacing * i;
-      spawnElement(Element, yPos, time);
+      makeOne(Element, yPos, time);
     }
   },
 
@@ -25,7 +25,7 @@ const SPAWNER = {
 
     for (let i = 0; i < size; i++) {
       let delay = time + spacing * i;
-      spawnElement(Element, yIni, delay);
+      makeOne(Element, yIni, delay);
     }
   },
 };
