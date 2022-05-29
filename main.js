@@ -56,7 +56,7 @@ const levels = {
   },
 
   atEnd() {
-    this.index === this.list.length - 1;
+    return this.index === this.list.length - 1;
   },
 };
 
