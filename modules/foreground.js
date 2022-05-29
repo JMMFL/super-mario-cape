@@ -7,7 +7,7 @@ const foreground = {
     menu: document.getElementById("menu"),
     tutorial: document.getElementById("tutorial"),
     loader: document.getElementById("loader"),
-    text: document.getElementById("text"),
+    level: document.getElementById("level"),
     death: document.getElementById("death"),
     fail: document.getElementById("fail"),
     hud: document.getElementById("hud"),
@@ -20,7 +20,7 @@ const foreground = {
       case fade:
         screen.classList.add("fade-active");
         break;
-      case text:
+      case level:
         const { name } = levels.getCurrent();
         screen.innerText = `${name}`;
         break;

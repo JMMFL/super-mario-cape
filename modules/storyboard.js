@@ -121,12 +121,12 @@ const storyboard = {
     foreground.hide("tutorial");
     foreground.hide("death");
     foreground.hide("fade");
-    foreground.show("text");
+    foreground.show("level");
     sound.play(musicName);
 
     setTimeout(() => {
       controller.enabled = true;
-      foreground.hide("text");
+      foreground.hide("level");
       foreground.show("hud");
       level.spawnFn();
       storyboard.changeState("LEVEL");

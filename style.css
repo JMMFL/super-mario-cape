@@ -158,7 +158,7 @@ input:focus {
   top: calc(50% + 234px);
 }
 
-#text {
+#level {
   font-size: 26px;
   color: yellow;
   background: #000000;
