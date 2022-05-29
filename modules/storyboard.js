@@ -36,6 +36,7 @@ const storyboard = {
             storyboard.playLevel();
           } else {
             player.reset();
+            controller.enabled = true;
             background.change("athletic");
             foreground.hide("menu");
             foreground.hide("fade");
@@ -49,6 +50,7 @@ const storyboard = {
 
     TUTORIAL: {
       play(timeout) {
+        controller.enabled = false;
         foreground.show("fade");
         sound.reset();
         sound.play("coin");
@@ -59,6 +61,7 @@ const storyboard = {
 
     LEVEL: {
       play(timeout) {
+        controller.enabled = false;
         background.enabled = false;
         foreground.show("death");
         sound.reset();
@@ -114,8 +117,8 @@ const storyboard = {
     player.isDead = false;
     player.gotStar = false;
 
-    controller.reset();
     player.reset();
+    controller.reset();
     background.enabled = true;
     background.change(backgroundTheme);
     foreground.hide("menu");
@@ -126,6 +129,7 @@ const storyboard = {
     sound.play(musicName);
 
     setTimeout(() => {
+      controller.enabled = true;
       foreground.hide("text");
       foreground.show("hud");
       level.spawnFn();
@@ -150,10 +154,7 @@ const storyboard = {
   },
 
   canPlay() {
-    const { state } = this;
-    return (
-      (state === "TUTORIAL" && !player.passedTutorial) || state === "LEVEL"
-    );
+    return this.state === "TUTORIAL" || this.state === "LEVEL";
   },
 
   passedTutorial() {
