@@ -66,7 +66,7 @@ const controller = {
       case UP_2_KEY:
         if (!jumpFlag && isHeld) {
           jumpFlag = true;
-          sound.sfx.capeJump.currentTime = 0;
+          sound.library.capeJump.currentTime = 0;
           sound.play("capeJump");
         } else if (!isHeld) {
           jumpFlag = false;

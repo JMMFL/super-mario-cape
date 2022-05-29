@@ -18,20 +18,22 @@ const IMAGE_PATHS = [
 ];
 
 const AUDIO_PATHS = [
-  "audio/music/yoshis-island.mp3",
   "audio/music/athletic.mp3",
   "audio/music/cast-list.mp3",
+  "audio/music/course-clear.wav",
+  "audio/music/fortress-clear.wav",
   "audio/music/fortress.mp3",
+  "audio/music/game-over.wav",
   "audio/music/ghost-house.mp3",
+  "audio/music/lost-a-life.wav",
   "audio/music/overworld.mp3",
   "audio/music/title.mp3",
+  "audio/music/world-clear.mp3",
+  "audio/music/yoshis-island.mp3",
   "audio/sfx/cape-jump.wav",
-  "audio/sfx/course-clear.wav",
-  "audio/sfx/fortress-clear.wav",
-  "audio/sfx/game-over.wav",
+  "audio/sfx/coin.wav",
   "audio/sfx/iris-out.wav",
   "audio/sfx/message-block.wav",
-  "audio/sfx/lost-a-life.wav",
 ];
 
 function loadImages(imagePaths) {

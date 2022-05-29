@@ -15,6 +15,7 @@ import OVERWORLD from "./modules/levels/overworld.js";
 
 // bug where sprite is midway for enemies when mario dies
 // we're drawing mario on all screens
+// mario can move during tutorial on exit
 
 const FPS_INTERVAL = 1000 / 60;
 const CANVAS = document.getElementById("canvas");
@@ -105,7 +106,7 @@ function setAudio() {
   soundBtn.addEventListener("click", () => {
     sound.toggle();
     const { enabled } = sound;
-    sound.music.title[enabled ? "play" : "pause"]();
+    sound.library.title[enabled ? "play" : "pause"]();
     soundBtn.value = `Sound: ${enabled ? "On!" : "Off"}`;
   });
 }
