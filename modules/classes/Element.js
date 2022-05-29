@@ -3,6 +3,7 @@ import {
   Mario,
   CONTEXT,
   SCREEN,
+  Star,
   atlas,
   storyboard,
   player,
