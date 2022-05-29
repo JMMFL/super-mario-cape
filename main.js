@@ -53,6 +53,10 @@ const levels = {
   goNext() {
     this.index += 1;
   },
+
+  atEnd() {
+    this.index === this.list.length - 1;
+  },
 };
 
 const atlas = new Image(972, 736);
