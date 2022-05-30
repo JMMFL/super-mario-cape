@@ -124,7 +124,8 @@ const storyboard = {
 
     PASS: {
       play() {
-        console.log("play level");
+        levels.goNext();
+        storyboard.playLevel();
       },
 
       end() {
