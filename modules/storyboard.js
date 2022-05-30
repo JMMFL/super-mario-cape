@@ -129,7 +129,11 @@ const storyboard = {
       },
 
       end() {
-        console.log("show ending");
+        foreground.hide("hud");
+        foreground.hide("death");
+        foreground.hide("iris");
+        foreground.show("end");
+        sound.play("castList");
       },
     },
   },

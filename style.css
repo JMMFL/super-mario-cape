@@ -190,9 +190,6 @@ input:focus {
   animation: moveOver 2s forwards;
 }
 
-#screen-transition-iris {
-}
-
 #tutorial {
   color: white;
   font-size: 24px;
@@ -205,6 +202,26 @@ input:focus {
   width: 576px;
   padding: 17px 24px 34px 24px;
   line-height: 31px;
+}
+
+#end {
+  background-color: black;
+  background-image: url("images/graphics/end.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+#end-text {
+  font-size: 16px;
+  line-height: 24px;
+  width: max-content;
+  top: calc(50% - 160px);
+  left: calc(50% + 228px);
+}
+
+#end-link {
+  color: yellow;
 }
 
 #loader {

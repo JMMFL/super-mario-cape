@@ -12,6 +12,7 @@ const foreground = {
     death: document.getElementById("death"),
     fail: document.getElementById("fail"),
     hud: document.getElementById("hud"),
+    end: document.getElementById("end"),
   },
 
   show(screenName) {
