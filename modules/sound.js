@@ -3,6 +3,7 @@ const sound = {
 
   library: {
     overworld: new Audio("audio/music/overworld.mp3"),
+    ghostHouse: new Audio("audio/music/ghost-house.mp3"),
     athletic: new Audio("audio/music/athletic.mp3"),
     castList: new Audio("audio/music/cast-list.mp3"),
     courseClear: new Audio("audio/music/course-clear.wav"),
