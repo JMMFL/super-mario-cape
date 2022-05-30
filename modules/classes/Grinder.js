@@ -10,7 +10,7 @@ class Grinder extends Element {
     this.yAtlas = 304;
     this.spriteLength = 2;
     this.spriteRate = 25;
-    this.xSpeed = game.scrollSpeed;
+    this.xSpeed = 5;
     this.yPos = yIni;
     this.wBox = 108;
     this.hBox = 108;
