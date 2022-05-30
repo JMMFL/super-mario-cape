@@ -7,6 +7,7 @@ import {
   atlas,
   storyboard,
   player,
+  elements,
 } from "../../main.js";
 
 class Element {
@@ -78,6 +79,9 @@ class Element {
     let [ey2, my2] = [ey1 + eh, my1 + mh];
     return !(ex1 >= mx2 || ey1 >= my2 || ex2 <= mx1 || ey2 <= my1);
   }
+  offCanvas() {
+    return this.xPos + this.width < 0;
+  }
 
   draw() {
     if (storyboard.state !== "DEATH") this.drawSprite();
@@ -95,6 +99,12 @@ class Element {
         } else {
           storyboard.dispatch("die", [1000]);
         }
+      }
+
+      if (this.offCanvas()) {
+        const index = elements.list.indexOf(this);
+        elements.list.splice(index, 1);
+        console.log(elements.list.length);
       }
     }
 
