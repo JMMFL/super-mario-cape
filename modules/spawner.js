@@ -7,7 +7,7 @@ const SPAWNER = {
     elements.timeouts.push(timeout);
   },
 
-  makeCol(Element, size, padding = 0, yIni, time) {
+  makeCol(Element, size, yIni, time) {
     const element = new Element(0);
     const { height } = element;
     const spacing = height + padding;
@@ -18,10 +18,10 @@ const SPAWNER = {
     }
   },
 
-  makeRow(Element, size, padding = 0, yIni, time) {
+  makeRow(Element, size, yIni, time) {
     const element = new Element(0);
     const { width } = element;
-    const spacing = (width + padding) / 1000;
+    const spacing = (width * 2) / 1000;
 
     for (let i = 0; i < size; i++) {
       let delay = time + spacing * i;
