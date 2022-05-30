@@ -28,6 +28,11 @@ const SPAWNER = {
       this.makeOne(Element, yIni, delay);
     }
   },
+
+  spawnElement(delay, element) {
+    let timeout = setTimeout(() => elements.list.push(element), delay * 1000);
+    elements.timeouts.push(timeout);
+  },
 };
 
 export default SPAWNER;
