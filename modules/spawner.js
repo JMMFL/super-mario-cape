@@ -10,7 +10,7 @@ const SPAWNER = {
   makeCol(Element, size, yIni, time) {
     const element = new Element(0);
     const { height } = element;
-    const spacing = height + padding;
+    const spacing = height;
 
     for (let i = 0; i < size; i++) {
       let yPos = yIni + spacing * i;
