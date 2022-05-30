@@ -15,7 +15,8 @@ class Mario extends Element {
     this.wBox = 92;
     this.hBox = 76;
 
-    this.lives = 0;
+    this.livesInit = 5;
+    this.lives = 5;
 
     this.xSpeed = 10;
     this.ySpeed = 10;
@@ -83,6 +84,10 @@ class Mario extends Element {
 
       count += 1;
     }, 10);
+  }
+
+  setLives() {
+    this.lives = this.livesInit;
   }
 
   reset() {

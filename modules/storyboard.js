@@ -102,6 +102,7 @@ const storyboard = {
       },
 
       fail() {
+        player.setLives();
         foreground.hide("hud");
         foreground.hide("fade");
         foreground.show("fail");
