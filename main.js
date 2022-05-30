@@ -14,9 +14,8 @@ import Mario from "./modules/classes/Mario.js";
 import Level from "./modules/classes/Level.js";
 import OVERWORLD from "./modules/levels/overworld.js";
 import ATHLETIC from "./modules/levels/athletic.js";
-// we're drawing mario on all screens
-// mario can move during tutorial on exit
-// draw mario but put him away OR don't draw mario at all
+import HAUNTED from "./modules/levels/haunted.js";
+import CASTLE from "./modules/levels/castle.js";
 
 const FPS_INTERVAL = 1000 / 60;
 const CANVAS = document.getElementById("canvas");
@@ -30,7 +29,6 @@ const SCREEN = {
 };
 
 const player = new Mario();
-player.passedTutorial = true;
 const elements = {
   list: [],
   timeouts: [],
@@ -55,7 +53,7 @@ const elements = {
 
 const levels = {
   index: 0,
-  list: [ATHLETIC, OVERWORLD],
+  list: [OVERWORLD, ATHLETIC, HAUNTED, CASTLE],
 
   getCurrent() {
     return this.list[this.index];
