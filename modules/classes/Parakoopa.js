@@ -12,7 +12,7 @@ class Parakoopa extends Element {
     this.hBox = 93;
     this.xOff = 5;
     this.yOff = 15;
-    this.xSpeed = 7;
+    this.xSpeed = 15;
   }
 
   moveImage() {
