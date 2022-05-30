@@ -37,7 +37,7 @@ const storyboard = {
           } else {
             player.reset();
             controller.enabled = true;
-            background.change("athletic");
+            background.change("plains");
             foreground.hide("menu");
             foreground.hide("fade");
             foreground.show("tutorial");

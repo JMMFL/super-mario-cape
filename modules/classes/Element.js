@@ -104,7 +104,6 @@ class Element {
       if (this.offCanvas()) {
         const index = elements.list.indexOf(this);
         elements.list.splice(index, 1);
-        console.log(elements.list.length);
       }
     }
 
