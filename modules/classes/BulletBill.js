@@ -8,7 +8,7 @@ class BulletBill extends Element {
     this.height = 56;
     this.xAtlas = 184;
     this.yAtlas = 0;
-    this.xSpeed = 25;
+    this.xSpeed = 20;
     this.yPos = yIni;
     this.wBox = 64;
     this.hBox = 56;
