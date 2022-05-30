@@ -1,4 +1,4 @@
-import { Element } from "../../main.js";
+import { SCREEN, Element } from "../../main.js";
 
 class BigBubble extends Element {
   constructor(yIni) {
