@@ -136,8 +136,7 @@ const storyboard = {
   playLevel() {
     const level = levels.getCurrent();
     const { backgroundTheme, musicName } = level;
-    elements.timeouts.length = 0;
-    elements.list.length = 0;
+    elements.reset();
     player.isDead = false;
     player.gotStar = false;
 

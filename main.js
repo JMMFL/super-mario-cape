@@ -13,7 +13,7 @@ import loading from "./modules/load.js";
 import Mario from "./modules/classes/Mario.js";
 import Level from "./modules/classes/Level.js";
 import OVERWORLD from "./modules/levels/overworld.js";
-
+import ATHLETIC from "./modules/levels/athletic.js";
 // we're drawing mario on all screens
 // mario can move during tutorial on exit
 // draw mario but put him away OR don't draw mario at all
@@ -30,6 +30,7 @@ const SCREEN = {
 };
 
 const player = new Mario();
+player.passedTutorial = true;
 const elements = {
   list: [],
   timeouts: [],
@@ -41,11 +42,20 @@ const elements = {
   draw() {
     this.list.forEach((element) => element.draw());
   },
+
+  reset() {
+    this.timeouts.forEach((timeout) => {
+      clearTimeout(timeout);
+    });
+
+    this.list.length = 0;
+    this.timeouts.length = 0;
+  },
 };
 
 const levels = {
   index: 0,
-  list: [OVERWORLD],
+  list: [ATHLETIC, OVERWORLD],
 
   getCurrent() {
     return this.list[this.index];
