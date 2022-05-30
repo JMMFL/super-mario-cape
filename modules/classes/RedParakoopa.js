@@ -1,4 +1,4 @@
-import Parakoopa from "../../main.js";
+import Parakoopa from "./Parakoopa.js";
 
 class RedParakoopa extends Parakoopa {
   constructor(yIni) {
